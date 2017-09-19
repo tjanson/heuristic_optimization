@@ -13,7 +13,7 @@ Scope and Audience
 ------------------
 
 Heuristic optimization algorithms (sometimes called
-`metaheuristics <https://en.wikipedia.org/wiki/Metaheuristic>`_
+`metaheuristics <https://en.wikipedia.org/wiki/Metaheuristic>`_)
 aim to find approximate global optima on problems that are intractable for
 exact algorithms. They make no guarantees regarding the optimality of the
 result (in particular, they are *not*
