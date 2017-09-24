@@ -12,7 +12,9 @@ class BatchOptimizer(IterativeOptimizer):
 
     Such optimizers generate a set of positions in each iteration,
     which is then evaluated. The next batch is determined based on
-    these results.
+    these results. (Examples include evolutionary computations,
+    particle swarm and similar population-based methods unless they
+    rely on memory beyond the current state.)
     """
 
     def __init__(self, objective_function, obj_fct_is_vectorized=False):

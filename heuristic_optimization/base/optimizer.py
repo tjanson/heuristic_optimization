@@ -1,7 +1,7 @@
 """Contains optimizer base class."""
 
 
-def _vectorize(fct):  # noqa: D202
+def _vectorize(fct):
     """Vectorize function so that it operates on and returns a list."""
     # TODO: parallelize this with multiprocessing (but make that configurable)
     # also, this (entire concept) doesn't exactly seem pretty

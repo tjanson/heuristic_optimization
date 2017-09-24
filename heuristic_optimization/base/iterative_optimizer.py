@@ -10,7 +10,7 @@ class IterativeOptimizer(Optimizer):
         super().__init__(objective_function, obj_fct_is_vectorized)
         self.iteration = 0
 
-    def optimize(self):  # noqa: D401
+    def optimize(self):
         """Iteratively optimize."""
         self.initialize()
 
