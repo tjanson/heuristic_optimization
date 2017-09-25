@@ -68,7 +68,6 @@ class ParticleSwarmOptimizer(BatchOptimizer):
 
     def next_positions(self):
         """Compute next positions and keep track of individual bests."""
-        # FIXME triple-check all of this stuff cause I got it horribly wrong before
         self.scores = np.array(self.scores)
         improved = self.scores < self._pso_data.best_scores
 
