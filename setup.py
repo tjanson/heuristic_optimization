@@ -9,7 +9,7 @@ with open('README.rst') as f:
 
 setup(
     name='heuristic_optimization',
-    version='0.4.1',
+    version='0.4.2',
     description='Heuristics for derivative-free optimization',
     long_description=readme,
 
