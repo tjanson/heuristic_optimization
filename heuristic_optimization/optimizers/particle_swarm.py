@@ -54,8 +54,7 @@ class ParticleSwarmOptimizer(BatchOptimizer):
 
     def initialize(self):
         """Spawn particles and initialize their scores."""
-        position_initializer = random_positions  # feel free to use something else
-        self.positions = position_initializer(self.options['num_particles'], self.lower_bound, self.upper_bound)
+        self.positions = self._generate_initial_positions()
         self.scores = np.array(self.compute_scores(self.positions))
 
         self._pso_data.best_positions = self.positions
@@ -81,6 +80,10 @@ class ParticleSwarmOptimizer(BatchOptimizer):
     def stop(self):
         """Return True when max_iters is reached."""
         return not self.iteration < self.options['max_iters']
+
+    def _generate_initial_positions(self):
+        """Generate initial positions."""  # for easy overriding
+        return random_positions(self.options['num_particles'], self.lower_bound, self.upper_bound)
 
     def _new_velocities(self):
         """Compute velocities based on three factors as defined in PSO."""
