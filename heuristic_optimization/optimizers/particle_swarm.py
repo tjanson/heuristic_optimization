@@ -62,7 +62,7 @@ class ParticleSwarmOptimizer(BatchOptimizer):
         self._pso_data.best_scores = self.scores
 
         magic_constant = 2  # feel free to change FIXME
-        max_velocity = self.upper_bound - self.lower_bound / magic_constant
+        max_velocity = (self.upper_bound - self.lower_bound) / magic_constant
         shape = (len(self.positions), len(self.lower_bound))
         self._pso_data.velocities = np.random.uniform(low=-max_velocity, high=max_velocity, size=shape)
 
