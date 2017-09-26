@@ -25,7 +25,13 @@ DEFAULT_OPTIONS = {
 
 
 class ParticleSwarmOptimizer(BatchOptimizer):
-    """Particle swarm heuristic_optimization.
+    """Particle swarm optimization procedure.
+
+    Particles are spawned randomly. Then each particle iteratively
+    moves based on three factors:
+        * the current best position among all particles ('social'),
+        * its individual historic best position ('cognition'),
+        * its velocity, i.e., its last direction of travel ('inertia').
 
     Args:
         options: Dict of PSO-specific hyperparameters (see
@@ -53,7 +59,10 @@ class ParticleSwarmOptimizer(BatchOptimizer):
         self._pso_data = SimpleNamespace(velocities=None, best_positions=None, best_scores=None)
 
     def initialize(self):
-        """Spawn particles and initialize their scores."""
+        """Spawn particles and initialize their scores.
+
+        Initial velocities are randomized, the maximum speed is limited
+        to a hardcoded value."""
         self.positions = self._generate_initial_positions()
         self.scores = np.array(self.compute_scores(self.positions))
 
